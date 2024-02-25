@@ -1,20 +1,41 @@
 # Questionário Sistemas Embarcados I
 
 ## 1. Explique brevemente o que é compilação cruzada (***cross-compiling***) e para que ela serve.
+A compilação cruzada é o processo em que o desenvolvedor desenvolve e compila um programa em uma plataforma diferente da que ele vai 
+executado o codigo. Ela é bastante usada em sistemas embarcados para criar programas para micro-processadores devido a baixo poder 
+de processamento deles, usamos um computador para desenvolver o código.
 
 ## 2. O que é um código de inicialização ou ***startup*** e qual sua finalidade?
+O codigo de startup é um conjunto de instruções que vao ser executadas por um sistema embarcado quando ele é ligado ou iniciado.
+É esse codigo que irá fazer a configuração inicial do sistema para preparar pra executar o software principal
 
 ## 3. Sobre o utilitário **make** e o arquivo **Makefile responda**:
 
 #### (a) Explique com suas palavras o que é e para que serve o **Makefile**.
+O makefile serve para automatiar o processo de compilação e vinculação do codigo fonte em diferentes arquivos que podem ter alguma 
+dependencia entre si.
 
 #### (b) Descreva brevemente o processo realizado pelo utilitário **make** para compilar um programa.
+Ele verifica as dependencias do codigo principal e executa as regras de compilação conforme necessário.
 
 #### (c) Qual é a sintaxe utilizada para criar um novo **target**?
+a sintaxe utilizada é a seguinte
+
+                                        target: pre_requisitos
+                                           comandos
 
 #### (d) Como são definidas as dependências de um **target**, para que elas são utilizadas?
+As dependencias de um target em um makefile sao as entradas ou pre requisitos necessario para contruir ou atualizar esse target,
+elas sao usadas pelo make para determinar se o target precisa ser reconstruido e quando ele precisa ser reconstruido.
 
 #### (e) O que são as regras do **Makefile**, qual a diferença entre regras implícitas e explícitas?
+As regras do makefile sao o que definem como construir ou atualizar um target, elas consistem em um target, suas dependencias e os 
+comandos necessarios para executar a construção.
+
+As regras explicitas sao aquelas que o usuario coloca no makefile para definir como construir um determinado target, elas definem 
+explicitamente os comandos necessarios para construir um target específico.
+Já as regras implicitas são aquelas que já sao forncidas por padrao pelo makefile para construir determinados tipos de arquivos. Elas
+sao usadas quando o Makefile nao contem uma regra explicita para um target, mas o utilitario make pode inferir como construií-lo.
 
 ## 4. Sobre a arquitetura **ARM Cortex-M** responda:
 
